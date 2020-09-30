@@ -1,6 +1,6 @@
 
 exports.min = function min(array) {
-  if (!array || array.lenght === 0) {
+  if (Array.isArray(array) === false || array === undefined || array.length === 0) {
     return 0;
   }
   return Math.min.apply(null, array);
@@ -8,20 +8,20 @@ exports.min = function min(array) {
 }
 
 exports.max = function max(array) {
-  if (!array || array.lenght === 0) {
+  if (Array.isArray(array) === false || array === undefined || array.length === 0) {
     return 0;
   }
   return Math.max.apply(null, array);
 }
 
 exports.avg = function avg(array) {
-  if (!array || array.lenght === 0) {
+  if (Array.isArray(array) === false || array === undefined || array.length === 0) {
     return 0;
   }
-  let elements_average;
-  for (let i = 0; i < array.lenght; i += 1) {
+  let elements_average = 0;
+  for (let i = 0; i < array.length; i += 1) {
     elements_average += array[i];
   }
-  elements_average = elements_average / array.lenght;
+  elements_average /= array.length;
   return elements_average;
 }
